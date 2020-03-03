@@ -6,6 +6,9 @@ function SearchBar(){
     <form>
       <input placeholder='Search Here'>
       </input>
+      <button>
+        Search
+      </button>
     </form>
   )
 }

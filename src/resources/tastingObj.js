@@ -8,8 +8,9 @@ module.export = {
     wines:[
       {
         wine: 'cooper & theif',
-        notes: 'Very very vanilla',
+        notes: 'sery very vanilla',
         crewRating: 2,
+        varietal: 'syrah'
       }
     ],
     varietals: {
