@@ -3,7 +3,7 @@
 module.export = {
   tasting: {
     day: 'Mon/Wed',
-    date: '2/21',
+    date: '2/21/2020',
     theme: 'Domestic Reds',
     wines:[
       {
