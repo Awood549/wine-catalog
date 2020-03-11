@@ -1,4 +1,5 @@
 import React from 'react';
+import useForm from './formBlock.js'
 
 function AddWine(){
 
@@ -8,14 +9,24 @@ function AddWine(){
   function dayForm(){
     return <form>
       <input type = 'radio' id = 'monday' name = 'day' value = 'monday' ></input>
-      <label for = 'monday'> Monday</label>
+      <label htmlFor = 'monday'> Monday</label>
       <input type= 'radio' id= 'wednesday' name= ' day'  value = 'wednesday'></input>
-      <label for= 'wednesday'> Wednesday</label>
+      <label htmlFor= 'wednesday'> Wednesday</label>
+    </form>
+  }
+  function dateForm(){
+
+    return <form>
+      <input type = 'date' id = 'date' name = 'date'></input>
+      <button onSubmit = {useForm.handleSubmit}>
+        Here
+      </button>
     </form>
   }
   return(
     <>
     {dayForm()}
+    {dateForm()}
         <form>
       <button>
         Add A Tasting

@@ -3,7 +3,7 @@ import './list.css'
 
 function List(){
   return(
-    <ul class = 'list'>
+    <ul className = 'list'>
       <li>Item1</li>
       <li>Item2</li>
       <li>Item3</li>
