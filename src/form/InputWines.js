@@ -1,7 +1,10 @@
 import React from 'react';
 import useForm from './formBlock.js'
 
-function AddWine(){
+ const AddWine = props => {
+
+  const [handleChange, handleSubmit] = useForm(dateForm
+    )
 
 
   //https://www.youtube.com/watch?v=sfp5K_5GHNg
@@ -15,18 +18,19 @@ function AddWine(){
       <br></br>
       </>
   }
-  function dateForm(){
+  function dateForm(date){
+    console.log(date)
 
     return <>
       <input type = 'date' id = 'date' name = 'date'></input>
-      <button onSubmit = {useForm.handleSubmit}>
+      <button>
         Here
       </button>
       </>
   }
   return(
     <>
-    <form onSubmit = {useForm.handleSubmit}>
+    <form onSubmit = {handleSubmit} onChange = {handleChange}>
     {dayForm()}
     {dateForm()}
     </form>
