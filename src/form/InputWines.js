@@ -4,44 +4,40 @@ import useForm from './formBlock.js'
 
  const AddWine = props => {
 
-  
-  const state = {
+  let state = {
+        day: '',
+        date: '',
+        theme: '',
+        wines: [],
+        varietals: '',
+        region: '',
+     }
 
-  }
-
-  const [handleChange, handleSubmit] = useForm(dateForm
+  const [handleChange, handleSubmit] = useForm(formBuilder
     )
 
 
   function formBuilder(props){
-
-
-
+    
     return <>
-      <input type = 'radio' id = 'monday' name = 'day' value = 'monday' ></input>
+    <form>
+      <input onChange = {handleChange} type = 'radio' id = 'monday' name = 'day' value = 'monday' ></input>
       <label htmlFor = 'monday'> Monday</label>
-      <input type= 'radio' id= 'wednesday' name= ' day'  value = 'wednesday'></input>
+      <input onChange = {handleChange} type= 'radio' id= 'wednesday' name= ' day'  value = 'wednesday'></input>
       <label htmlFor= 'wednesday'> Wednesday</label>
       <br></br>
-      </>
-  }
-  function dateForm(date){
-    console.log(date)
 
-    return <>
-      <input type = 'date' id = 'date' name = 'date'></input>
-      <button>
-        Here
-      </button>
+      <input onChange = {handleChange} type = 'date' id = 'date' name = 'date'></input>
+      <br></br>
+      <button> Submit </button>
+      </form>
       </>
   }
+
   return(
-    <>
-    <form>
-    {formBuilder()}
-    {dateForm()}
-    </form>
 
+    <>
+    {formBuilder()}
     </>
 
   )
