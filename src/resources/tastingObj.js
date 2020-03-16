@@ -17,9 +17,6 @@ module.export = {
       redBlend: true,
       cabernet:false,
     },
-    region: {
-      domestic:true,
-      italy: false
-    }
+    country: 'domestic'
   }
 }
