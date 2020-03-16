@@ -24,6 +24,28 @@ import './forms.css'
     return true
 
   }
+  function ratingsInput(){
+
+    return(
+      <>
+      <label>1
+    <input type= "radio" name= 'rating' value='1'></input>
+      </label>
+      <label>2
+    <input type= "radio" name= 'rating' value='2'></input>
+      </label>
+      <label>3
+    <input type= "radio" name= 'rating' value='3'></input>
+      </label>
+      <label>4
+    <input type= "radio" name= 'rating' value='4'></input>
+      </label>
+      <label>5
+    <input type= "radio" name= 'rating' value='5'></input>
+      </label>
+    </>
+    )
+  }
 
   return(
     <>
@@ -50,18 +72,22 @@ import './forms.css'
       <label> 1.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      {ratingsInput()}
       </label>
       <label> 2.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      {ratingsInput()}
       </label>
       <label> 3.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      {ratingsInput()}
       </label>
       <label> 4.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      {ratingsInput()}
       </label>
 
       {/* Country input */}
