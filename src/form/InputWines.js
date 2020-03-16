@@ -27,6 +27,7 @@ import './forms.css'
 
   return(
     <>
+    {/* Day of the week input */}
     <h4>Day of Tasting</h4>
     <form onSubmit = {handleSubmit}>
       <label htmlFor = 'monday'> 
@@ -35,10 +36,16 @@ import './forms.css'
       <label htmlFor= 'wednesday'>
       <input onChange = {handleChange} type= 'radio' id= 'wednesday' name='day'  value = 'wednesday'></input>
          Wednesday</label>
+
+         {/* Date Input */}
       <h4>Date of Tasting</h4>
       <input onChange = {handleChange} type = 'date' id = 'date' name = 'date'></input>
+      
+      {/* Theme input */}
       <h4>Tasting Theme</h4>
       <input onChange = {handleChange} type= 'text' placeholder = 'Tasting Theme Here!' id = 'theme' name = 'theme' ></input>
+
+      {/* Country input */}
       <h4>Country of Origin</h4>
       <label> 
       <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input>Domestic
