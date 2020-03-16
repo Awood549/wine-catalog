@@ -9,8 +9,8 @@ import useForm from './formBlock.js'
         date: '',
         theme: '',
         wines: [],
-        varietals: '',
-        region: '',
+        varietals: {},
+        region: {},
      }
 
   const [handleChange, handleSubmit] = useForm(formBuilder
@@ -18,29 +18,30 @@ import useForm from './formBlock.js'
 
 
   function formBuilder(props){
-    
-    return (
-    <form>
-      <input onChange = {handleChange} type = 'radio' id = 'monday' name = 'day' value = 'monday' ></input>
-      <label htmlFor = 'monday'> Monday</label>
-      <input onChange = {handleChange} type= 'radio' id= 'wednesday' name= ' day'  value = 'wednesday'></input>
-      <label htmlFor= 'wednesday'> Wednesday</label>
+
+    console.log(props)
+    return true
+
+  }
+
+  return(
+
+    <form onSubmit = {handleSubmit}>
+      <label htmlFor = 'monday'> 
+      <input onChange = {handleChange} type = 'radio' id='monday' name='day' value = 'monday' ></input>
+      Monday</label>
+      <label htmlFor= 'wednesday'>
+      <input onChange = {handleChange} type= 'radio' id= 'wednesday' name='day'  value = 'wednesday'></input>
+         Wednesday</label>
       <br></br>
 
       <input onChange = {handleChange} type = 'date' id = 'date' name = 'date'></input>
       <br></br>
       <button> Submit </button>
 
-
+      <input onChange = {handleChange} type= 'text' placeholder = 'Tasting Theme Here!' id = 'theme' name = 'theme' ></input>
+      <input onChange = {handleChange} ></input>
       </form>
-)
-  }
-
-  return(
-
-    <>
-    {formBuilder()}
-    </>
 
   )
 }
