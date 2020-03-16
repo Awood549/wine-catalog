@@ -2,22 +2,30 @@ import React from 'react';
 import useForm from './formBlock.js'
   //https://www.youtube.com/watch?v=sfp5K_5GHNg
 
- const AddWine = props => {
+ class AddWine extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      day: this.day,
+      date: this.date,
+      theme: this.theme,
+      wines: [],
+      varietals: this.varietals,
+      region: this.region,
+   }
+
+    
+  }
 
   const [handleChange, handleSubmit] = useForm(dateForm
     )
 
-  function formBuilder(){ 
+
+  formBuilder(props){
 
 
 
-    return (
-      true
-    )
-  }
-
-
-  function dayForm(){
     return <>
       <input type = 'radio' id = 'monday' name = 'day' value = 'monday' ></input>
       <label htmlFor = 'monday'> Monday</label>
@@ -26,7 +34,7 @@ import useForm from './formBlock.js'
       <br></br>
       </>
   }
-  function dateForm(date){
+  dateForm(date){
     console.log(date)
 
     return <>
@@ -36,16 +44,18 @@ import useForm from './formBlock.js'
       </button>
       </>
   }
+  render() {
   return(
     <>
     <form>
-    {dayForm()}
+    {formBuilder()}
     {dateForm()}
     </form>
 
     </>
 
-  )
+  );
+  }
 }
 
 export default AddWine
