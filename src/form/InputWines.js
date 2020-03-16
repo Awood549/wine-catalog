@@ -19,7 +19,7 @@ import useForm from './formBlock.js'
 
   function formBuilder(props){
     
-    return <>
+    return (
     <form>
       <input onChange = {handleChange} type = 'radio' id = 'monday' name = 'day' value = 'monday' ></input>
       <label htmlFor = 'monday'> Monday</label>
@@ -30,8 +30,10 @@ import useForm from './formBlock.js'
       <input onChange = {handleChange} type = 'date' id = 'date' name = 'date'></input>
       <br></br>
       <button> Submit </button>
+
+
       </form>
-      </>
+)
   }
 
   return(
