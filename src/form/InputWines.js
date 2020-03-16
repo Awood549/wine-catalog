@@ -2,27 +2,18 @@ import React from 'react';
 import useForm from './formBlock.js'
   //https://www.youtube.com/watch?v=sfp5K_5GHNg
 
- class AddWine extends React.Component{
+ const AddWine = props => {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      day: this.day,
-      date: this.date,
-      theme: this.theme,
-      wines: [],
-      varietals: this.varietals,
-      region: this.region,
-   }
+  
+  const state = {
 
-    
   }
 
   const [handleChange, handleSubmit] = useForm(dateForm
     )
 
 
-  formBuilder(props){
+  function formBuilder(props){
 
 
 
@@ -34,7 +25,7 @@ import useForm from './formBlock.js'
       <br></br>
       </>
   }
-  dateForm(date){
+  function dateForm(date){
     console.log(date)
 
     return <>
@@ -44,7 +35,6 @@ import useForm from './formBlock.js'
       </button>
       </>
   }
-  render() {
   return(
     <>
     <form>
@@ -54,8 +44,7 @@ import useForm from './formBlock.js'
 
     </>
 
-  );
-  }
+  )
 }
 
 export default AddWine
