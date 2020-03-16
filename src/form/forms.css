@@ -1,3 +1,6 @@
-*{
-  color:black
+button{
+  color:orange
+}
+label{
+    display: block;
 }
