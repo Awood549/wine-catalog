@@ -1,5 +1,6 @@
 import React from 'react';
 import useForm from './formBlock.js'
+import './forms.css'
   //https://www.youtube.com/watch?v=sfp5K_5GHNg
 
  const AddWine = props => {
@@ -40,16 +41,37 @@ import useForm from './formBlock.js'
 
       <input onChange = {handleChange} type= 'text' placeholder = 'Tasting Theme Here!' id = 'theme' name = 'theme' ></input>
       
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value= 'france'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value= 'italy'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value= 'spain'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value= 'germany'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value= 'chile'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value= 'argentina'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value = 'newZealand'></input>
-      <input onChange = {handleChange}  type= 'radio' name= 'country' value = 'australia'></input>
-      <input onChange = {handleChange}  type= 'text' name= 'country' placeholder= 'Country Not Listed'></input>
+      <label> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input>Domestic
+      </label>
+      <label> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'france'></input>France
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'italy'></input>Italy
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'spain'></input>Spain
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'germany'></input>Germany
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'chile'></input>Chile
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'argentina'></input>Argentina
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'newZealand'></input>New Zealand
+      </label>
+      <label> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'australia'></input>
+      </label>Australia
+      <br></br>
+      <label> Country Not Listed: 
+      <input onChange = {handleChange}  type= 'text' name= 'country' placeholder= 'Other...'></input>
+      </label>
 
       <button> Submit </button>
       </form>
