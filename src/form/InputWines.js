@@ -28,6 +28,7 @@ import './forms.css'
 
     return(
       <>
+      <h4>Crew Rating</h4>
       <label>1
     <input type= "radio" name= 'rating' value='1'></input>
       </label>
@@ -44,6 +45,35 @@ import './forms.css'
     <input type= "radio" name= 'rating' value='5'></input>
       </label>
     </>
+    )
+  }
+
+  function varietalsInput(){
+
+    return(
+      <>
+      <h4>Varietal</h4>
+      <label>
+      <input type= 'checkbox' name= 'varietals' value='syrah'></input>
+      Syrah
+      </label>
+      <label>
+      <input type= 'checkbox' name= 'varietals' value='cabernet'></input>
+      Cabernet Sauvignon
+      </label>
+      <label>
+      <input type= 'checkbox' name= 'varietals' value='merlot'></input>
+      Merlot
+      </label>
+      <label>
+      <input type= 'checkbox' name= 'varietals' value='redBlend'></input>
+      Red Blend
+      </label>
+      <label>
+      <input type= 'checkbox' name= 'varietals' value='zinfandel'></input>
+      Zinfandel
+      </label>
+      </>
     )
   }
 
@@ -67,27 +97,31 @@ import './forms.css'
       <h4>Tasting Theme</h4>
       <input onChange = {handleChange} type= 'text' placeholder = 'Tasting Theme Here!' id = 'theme' name = 'theme' ></input>
 
-      {/* Varietals Input */}
+      {/* Wines Sampled Inputs */}
       <h4>Wines Tasted</h4>
       <label> 1.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
+      {varietalsInput()}
       </label>
       <label> 2.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
+      {varietalsInput()}
       </label>
       <label> 3.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
+      {varietalsInput()}
       </label>
       <label> 4.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
+      {varietalsInput()}
       </label>
 
       {/* Country input */}
