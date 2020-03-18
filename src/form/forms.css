@@ -1,6 +1,19 @@
 button{
   color:orange
 }
-label{
-    display: block;
+
+.eachWine{
+  display: flex;
+  flex-direction: row;
+  margin: .25em;
+  border: .25em solid red;
+}
+
+.rating{
+  margin:.25em;
+  border: .5 solid green;
+}
+
+h4{
+  margin: 0;
 }

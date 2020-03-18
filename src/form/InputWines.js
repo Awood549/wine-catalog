@@ -53,23 +53,23 @@ import './forms.css'
     return(
       <>
       <h4>Varietal</h4>
-      <label>
+      <label className= 'rating'>
       <input type= 'checkbox' name= 'varietals' value='syrah'></input>
       Syrah
       </label>
-      <label>
+      <label className= 'rating'>
       <input type= 'checkbox' name= 'varietals' value='cabernet'></input>
       Cabernet Sauvignon
       </label>
-      <label>
+      <label className= 'rating'>
       <input type= 'checkbox' name= 'varietals' value='merlot'></input>
       Merlot
       </label>
-      <label>
+      <label className= 'rating'>
       <input type= 'checkbox' name= 'varietals' value='redBlend'></input>
       Red Blend
       </label>
-      <label>
+      <label className= 'rating'>
       <input type= 'checkbox' name= 'varietals' value='zinfandel'></input>
       Zinfandel
       </label>
@@ -99,25 +99,25 @@ import './forms.css'
 
       {/* Wines Sampled Inputs */}
       <h4>Wines Tasted</h4>
-      <label> 1.
+      <label className= 'eachWine'> 1.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
       {varietalsInput()}
       </label>
-      <label> 2.
+      <label className= 'eachWine'> 2.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
       {varietalsInput()}
       </label>
-      <label> 3.
+      <label className= 'eachWine'> 3.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
       {varietalsInput()}
       </label>
-      <label> 4.
+      <label className= 'eachWine'> 4.
       <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
       <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
       {ratingsInput()}
