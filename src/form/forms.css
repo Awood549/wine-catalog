@@ -2,18 +2,37 @@ button{
   color:orange
 }
 
+h4{
+  margin: 0;
+  display: block;
+}
+.varietalChoices{
+  display: flex;
+  flex-wrap: wrap;
+  margin:.25em;
+}
 .eachWine{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: .25em;
   border: .25em solid red;
+  width:480px
+}
+.wineName{
+  text-align: justify;
+  width: 50%;
+  height: 50%;
+}
+.varietal{
+  display: flex;
+  flex-wrap: wrap;
+  margin:.25em;
+  border: .5em solid green;
 }
 
 .rating{
-  margin:.25em;
-  border: .5 solid green;
-}
-
-h4{
-  margin: 0;
+  border: 1em solid blue;
+  display: flex;
+  flex-direction: column;
 }

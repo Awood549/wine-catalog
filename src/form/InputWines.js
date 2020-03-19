@@ -28,22 +28,22 @@ import './forms.css'
 
     return(
       <>
+      <label className= 'rating'>
       <h4>Crew Rating</h4>
-      <label>1
-    <input type= "radio" name= 'rating' value='1'></input>
+    1<input type= "radio" name= 'rating' value='1'></input>
+    2<input type= "radio" name= 'rating' value='2'></input>
+    3<input type= "radio" name= 'rating' value='3'></input>
+    4<input type= "radio" name= 'rating' value='4'></input>
+    5<input type= "radio" name= 'rating' value='5'></input>
       </label>
-      <label>2
-    <input type= "radio" name= 'rating' value='2'></input>
-      </label>
-      <label>3
-    <input type= "radio" name= 'rating' value='3'></input>
-      </label>
-      <label>4
-    <input type= "radio" name= 'rating' value='4'></input>
-      </label>
-      <label>5
-    <input type= "radio" name= 'rating' value='5'></input>
-      </label>
+    </>
+    )
+  }
+  function nameAndNotesInput(){
+    return(      
+      <>
+    <input className= 'wineName' type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
+    <input className='wineName' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
     </>
     )
   }
@@ -52,26 +52,15 @@ import './forms.css'
 
     return(
       <>
+      <label className= 'varietal'>
       <h4>Varietal</h4>
-      <label className= 'rating'>
-      <input type= 'checkbox' name= 'varietals' value='syrah'></input>
-      Syrah
+      <label className='varietalChoices'>
+      <input type= 'checkbox' name= 'varietals' value='syrah'></input>Syrah
+      <input type= 'checkbox' name= 'varietals' value='cabernet'></input>Cabernet Sauvignon
+      <input type= 'checkbox' name= 'varietals' value='merlot'></input>Merlot
+      <input type= 'checkbox' name= 'varietals' value='redBlend'></input>Red Blend
+      <input type= 'checkbox' name= 'varietals' value='zinfandel'></input>Zinfandel
       </label>
-      <label className= 'rating'>
-      <input type= 'checkbox' name= 'varietals' value='cabernet'></input>
-      Cabernet Sauvignon
-      </label>
-      <label className= 'rating'>
-      <input type= 'checkbox' name= 'varietals' value='merlot'></input>
-      Merlot
-      </label>
-      <label className= 'rating'>
-      <input type= 'checkbox' name= 'varietals' value='redBlend'></input>
-      Red Blend
-      </label>
-      <label className= 'rating'>
-      <input type= 'checkbox' name= 'varietals' value='zinfandel'></input>
-      Zinfandel
       </label>
       </>
     )
@@ -99,27 +88,23 @@ import './forms.css'
 
       {/* Wines Sampled Inputs */}
       <h4>Wines Tasted</h4>
-      <label className= 'eachWine'> 1.
-      <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-      <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      <label className= 'eachWine'>
+      {nameAndNotesInput()}
       {ratingsInput()}
       {varietalsInput()}
       </label>
       <label className= 'eachWine'> 2.
-      <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-      <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      {nameAndNotesInput()}
       {ratingsInput()}
       {varietalsInput()}
       </label>
       <label className= 'eachWine'> 3.
-      <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-      <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      {nameAndNotesInput()}
       {ratingsInput()}
       {varietalsInput()}
       </label>
       <label className= 'eachWine'> 4.
-      <input type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-      <input type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+      {nameAndNotesInput()}
       {ratingsInput()}
       {varietalsInput()}
       </label>
