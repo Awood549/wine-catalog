@@ -50,9 +50,22 @@ import './forms.css'
 
   
   function countryOfOrigin(){
-    let values = []
+    let values = [
+      {
+        name:'Domestic',
+        value:'domestic'
+      },
+      {
+        value:'france',
+        name:'France'
+      }
+    ]
     let markup;
     for(let i=0; i <  values.length; i++){
+      markup = 
+      <label> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= {values[i].value}></input><p className='countryRadio'>{values[i].name}</p><br></br>
+      </label>
     }
 
     return(
