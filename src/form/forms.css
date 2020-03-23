@@ -10,6 +10,7 @@ h4{
   display: flex;
   flex-wrap: wrap;
   margin:.25em;
+  /* width: 2em; */
 }
 .eachWine{
   display: flex;
@@ -35,4 +36,8 @@ h4{
   border: 1em solid blue;
   display: flex;
   flex-direction: column;
+}
+
+.countryRadio{
+  display: inline-block
 }

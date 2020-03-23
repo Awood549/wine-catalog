@@ -30,11 +30,11 @@ import './forms.css'
       <>
       <label className= 'rating'>
       <h4>Crew Rating</h4>
-    1<input type= "radio" name= 'rating' value='1'></input>
-    2<input type= "radio" name= 'rating' value='2'></input>
-    3<input type= "radio" name= 'rating' value='3'></input>
-    4<input type= "radio" name= 'rating' value='4'></input>
-    5<input type= "radio" name= 'rating' value='5'></input>
+    1<input onChange = {handleChange} type= "radio" name= 'rating' value='1'></input>
+    2<input onChange = {handleChange} type= "radio" name= 'rating' value='2'></input>
+    3<input onChange = {handleChange} type= "radio" name= 'rating' value='3'></input>
+    4<input onChange = {handleChange} type= "radio" name= 'rating' value='4'></input>
+    5<input onChange = {handleChange} type= "radio" name= 'rating' value='5'></input>
       </label>
     </>
     )
@@ -42,12 +42,49 @@ import './forms.css'
   function nameAndNotesInput(){
     return(      
       <>
-    <input className= 'wineName' type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-    <input className='wineName' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+    <input onChange = {handleChange} className= 'wineName' type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
+    <input onChange = {handleChange} className='wineName' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
     </>
     )
   }
 
+  function countryOfOrigin(){
+
+    return(
+      <>
+    <label className='countryRadio'> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input><p className='countryRadio'>Domestic</p>
+      </label>
+      <label> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'france'></input><p className='countryRadio'>France</p>
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'italy'></input><p className='countryRadio'>Italy</p>
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'spain'></input><p className='countryRadio'>Spain</p>
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'germany'></input><p className='countryRadio'>Germany</p>
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'chile'></input><p className='countryRadio'>Chile</p>
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'argentina'></input><p className='countryRadio'>Argentina</p>
+      </label>
+      <label>
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'newZealand'></input><p className='countryRadio'>New Zealand</p>
+      </label>
+      <label> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'australia'></input><p className='countryRadio'>Australia</p>
+      </label>
+      <label> Country Not Listed: 
+      <input onChange = {handleChange}  type= 'text' name= 'country' placeholder= 'Other...'></input>
+      </label>
+      </>
+      )
+  }
   function varietalsInput(){
 
     return(
@@ -55,11 +92,16 @@ import './forms.css'
       <label className= 'varietal'>
       <h4>Varietal</h4>
       <label className='varietalChoices'>
-      <input type= 'checkbox' name= 'varietals' value='syrah'></input>Syrah
-      <input type= 'checkbox' name= 'varietals' value='cabernet'></input>Cabernet Sauvignon
-      <input type= 'checkbox' name= 'varietals' value='merlot'></input>Merlot
-      <input type= 'checkbox' name= 'varietals' value='redBlend'></input>Red Blend
-      <input type= 'checkbox' name= 'varietals' value='zinfandel'></input>Zinfandel
+      <p>Syrah</p>
+      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='syrah'></input>
+      <p>Cabernet Sauvignon</p>
+      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='cabernet'></input>
+      <p>Merlot</p>
+      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='merlot'></input>
+      <p>Red Blend</p>
+      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='redBlend'></input>
+      <p>Zinfandel</p>
+      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='zinfandel'></input>
       </label>
       </label>
       </>
@@ -111,37 +153,7 @@ import './forms.css'
 
       {/* Country input */}
       <h4>Country of Origin</h4>
-      <label> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input>Domestic
-      </label>
-      <label> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'france'></input>France
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'italy'></input>Italy
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'spain'></input>Spain
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'germany'></input>Germany
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'chile'></input>Chile
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'argentina'></input>Argentina
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'newZealand'></input>New Zealand
-      </label>
-      <label> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'australia'></input>Australia
-      </label>
-      <label> Country Not Listed: 
-      <input onChange = {handleChange}  type= 'text' name= 'country' placeholder= 'Other...'></input>
-      </label>
-
+      {countryOfOrigin()}
       <button> Submit </button>
       </form>
       </>
