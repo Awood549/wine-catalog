@@ -53,56 +53,51 @@ import './forms.css'
     let values = [
       {
         name:'Domestic',
-        value:'domestic'
+        value:'domestic',
       },
       {
+        name:'France',
         value:'france',
-        name:'France'
-      }
+      },
+      {
+        name:'Italy',
+        value:'italy',
+      },
+      {
+        name:'Spain',
+        value:'spain'
+      },
+      {
+        name:'Germany',
+        value:'germany'
+      },
+      {
+        name:'Chile',
+        value:'chile'
+      },
+      {
+        name:'Argentina',
+        value:'argentina'
+      },
+      {
+        name:'New Zealand',
+        value:'newZealand'
+      },
+      {
+        name:'Australia',
+        value:'australia'
+      },
     ]
-    let markup;
-    for(let i=0; i <  values.length; i++){
-      markup = 
-      <label> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= {values[i].value}></input><p className='countryRadio'>{values[i].name}</p><br></br>
-      </label>
-    }
 
-    return(
-      <>
-    <label> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input><p className='countryRadio'>Domestic</p><br></br>
+    let markup = values.map((item,idx) =>
+      <label key = {idx}> 
+      <input key = {idx} className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= {item.value}></input><p className='countryRadio'>{item.name}</p><br></br>
       </label>
-      <label> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'france'></input><p className='countryRadio'>France</p>
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'italy'></input><p className='countryRadio'>Italy</p>
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'spain'></input><p className='countryRadio'>Spain</p>
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'germany'></input><p className='countryRadio'>Germany</p>
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'chile'></input><p className='countryRadio'>Chile</p>
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'argentina'></input><p className='countryRadio'>Argentina</p>
-      </label>
-      <label>
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'newZealand'></input><p className='countryRadio'>New Zealand</p>
-      </label>
-      <label> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'australia'></input><p className='countryRadio'>Australia</p>
-      </label>
-      <label> Country Not Listed: 
-      <input onChange = {handleChange}  type= 'text' name= 'country' placeholder= 'Other...'></input>
-      </label>
-      </>
-      )
+    )
+
+    return markup
   }
+
   function varietalsInput(){
 
     return(
@@ -148,6 +143,7 @@ import './forms.css'
 
       {/* Wines Sampled Inputs */}
       <h4>Wines Tasted</h4>
+      
       <label className= 'eachWine'>
       {nameAndNotesInput()}
       {ratingsInput()}
