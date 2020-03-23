@@ -48,12 +48,17 @@ import './forms.css'
     )
   }
 
+  
   function countryOfOrigin(){
+    let values = []
+    let markup;
+    for(let i=0; i <  values.length; i++){
+    }
 
     return(
       <>
-    <label className='countryRadio'> 
-      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input><p className='countryRadio'>Domestic</p>
+    <label> 
+      <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'domestic'></input><p className='countryRadio'>Domestic</p><br></br>
       </label>
       <label> 
       <input className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= 'france'></input><p className='countryRadio'>France</p>
@@ -152,9 +157,11 @@ import './forms.css'
       </label>
 
       {/* Country input */}
+      <label className= 'countryOrigin'>
       <h4>Country of Origin</h4>
       {countryOfOrigin()}
-      <button> Submit </button>
+      </label>
+      <button> Submit Tasting</button>
       </form>
       </>
   )

@@ -38,6 +38,14 @@ h4{
   flex-direction: column;
 }
 
-.countryRadio{
-  display: inline-block
+p.countryRadio{
+  display: inline-block;
+  /* border: .5em dotted indianred; */
+  white-space: nowrap;
+}
+
+.countryOrigin{
+  display: inline-block;
+  width: 7em;
+  border: .5em solid yellow;
 }
