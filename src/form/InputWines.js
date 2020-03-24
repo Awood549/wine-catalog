@@ -163,7 +163,7 @@ import './forms.css'
     )
     return(
       <>
-            <h4>Wines Tasted</h4>
+            <h2 className = 'winesHeader'>Wines Tasted</h2>
             {markup}
             </>
     )
@@ -172,23 +172,28 @@ import './forms.css'
 
   return(
     <>
-    {/* Day of the week input */}
-    <h4>Day of Tasting</h4>
     <form onSubmit = {handleSubmit}>
-      <label htmlFor = 'monday'> 
+
+    {/* Day of the week input */}
+      <label className = 'dayOf'> 
+      <h4>Day of Tasting</h4>
       <input onChange = {handleChange} type = 'radio' id='monday' name='day' value = 'monday' ></input>
-      Monday</label>
-      <label htmlFor= 'wednesday'>
+      <p>Monday</p>
       <input onChange = {handleChange} type= 'radio' id= 'wednesday' name='day'  value = 'wednesday'></input>
-         Wednesday</label>
+         <p>Wednesday</p>
+         </label>
 
          {/* Date Input */}
+      <label className = 'dateOf'>
       <h4>Date of Tasting</h4>
       <input onChange = {handleChange} type = 'date' id = 'date' name = 'date'></input>
+      </label>
 
       {/* Theme Input */}
+      <label className = 'theme'>
       <h4>Tasting Theme</h4>
       <input onChange = {handleChange} type= 'text' placeholder = 'Tasting Theme Here!' id = 'theme' name = 'theme' ></input>
+      </label>
 
       {/* Wines Sampled Inputs */}
       {formBuilder()}

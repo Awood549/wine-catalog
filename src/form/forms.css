@@ -1,6 +1,7 @@
 button{
   color:orange
 }
+
 h4{
   margin: 0;
   display: block;
@@ -15,14 +16,28 @@ h3{
 input{
   margin-right: .5em;
 }
+
 p{
   display: inline;
+}
+.winesHeader{
+  text-align: center;
+  font-size: 3em;
+  margin: 0;;
 }
 
 input[type=text]:focus {
   background-color: lightblue;
 }
-
+.dayOf{
+  display: inline-block;
+}
+.dateOf{
+  display: inline-block;
+}
+.theme{
+  display: inline-block;
+}
 .varietal{
   display: inline-block;
   margin: .25em;
