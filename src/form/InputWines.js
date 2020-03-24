@@ -154,8 +154,8 @@ import './forms.css'
       <h3>{number}</h3>
       {nameAndNotesInput()} 
       {countryOfOrigin()}
-      {ratingsInput()}
       {varietalsInput()}
+      {ratingsInput()}
       </label>
       </>
     )
