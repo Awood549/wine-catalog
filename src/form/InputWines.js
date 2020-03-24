@@ -25,16 +25,18 @@ import './forms.css'
   }
 
   function ratingsInput(){
+    let values = ['1','2','3','4','5']
 
+    let markup = values.map(value =>
+      <> 
+      <p>{value}</p><input key = {value} onChange = {handleChange} type= "radio" name= 'rating' value={value}></input>
+      </>
+      )
     return(
       <>
       <label className= 'rating'>
       <h4>Crew Rating</h4>
-    1<input onChange = {handleChange} type= "radio" name= 'rating' value='1'></input>
-    2<input onChange = {handleChange} type= "radio" name= 'rating' value='2'></input>
-    3<input onChange = {handleChange} type= "radio" name= 'rating' value='3'></input>
-    4<input onChange = {handleChange} type= "radio" name= 'rating' value='4'></input>
-    5<input onChange = {handleChange} type= "radio" name= 'rating' value='5'></input>
+      {markup}
       </label>
     </>
     )
