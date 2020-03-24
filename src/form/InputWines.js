@@ -149,12 +149,15 @@ import './forms.css'
     let numberOfWines = ['1','2','3','4'];
 
     let markup = numberOfWines.map( number =>
+      <>
       <label className= 'eachWine'>
+      <h3>{number}</h3>
       {nameAndNotesInput()} 
-      {ratingsInput()}
       {countryOfOrigin()}
       {varietalsInput()}
+      {ratingsInput()}
       </label>
+      </>
     )
     return(
       <>
