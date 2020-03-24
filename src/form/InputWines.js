@@ -95,26 +95,52 @@ import './forms.css'
       </label>
     )
 
-    return markup
+    return <>
+          <label className= 'countryOrigin'>
+      <h4>Country of Origin</h4>
+      {markup}
+      </label>
+    </>
   }
 
   function varietalsInput(){
+    let values = [
+      {
+        name:'Syrah',
+        value:'syrah',
+      },
+      {
+        name:'Cabernet Sauvignon',
+        value:'cabernetSauvignon',
+      },
+      {
+        name:'Merlot',
+        value:'merlot',
+      },
+      {
+        name:'Red Blend',
+        value:'redBlend',
+      },
+      {
+        name:'Zinfandel',
+        value:'zinfandel',
+      },
+    ]
+
+
+    let markup = values.map((item,idx) => 
+    <label key = {idx} className='varietalChoices'>
+      <p>{item.name}</p>
+      <input key = {idx} onChange = {handleChange} type= 'checkbox' name= 'varietals' value={item.value}></input>
+    </label>
+    )
 
     return(
       <>
       <label className= 'varietal'>
       <h4>Varietal</h4>
       <label className='varietalChoices'>
-      <p>Syrah</p>
-      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='syrah'></input>
-      <p>Cabernet Sauvignon</p>
-      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='cabernet'></input>
-      <p>Merlot</p>
-      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='merlot'></input>
-      <p>Red Blend</p>
-      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='redBlend'></input>
-      <p>Zinfandel</p>
-      <input onChange = {handleChange} type= 'checkbox' name= 'varietals' value='zinfandel'></input>
+        {markup}
       </label>
       </label>
       </>
@@ -143,11 +169,12 @@ import './forms.css'
 
       {/* Wines Sampled Inputs */}
       <h4>Wines Tasted</h4>
-      
+
       <label className= 'eachWine'>
       {nameAndNotesInput()}
       {ratingsInput()}
       {varietalsInput()}
+      
       </label>
       <label className= 'eachWine'> 2.
       {nameAndNotesInput()}
@@ -166,10 +193,7 @@ import './forms.css'
       </label>
 
       {/* Country input */}
-      <label className= 'countryOrigin'>
-      <h4>Country of Origin</h4>
       {countryOfOrigin()}
-      </label>
       <button> Submit Tasting</button>
       </form>
       </>

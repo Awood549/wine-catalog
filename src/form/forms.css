@@ -13,7 +13,7 @@ h4{
   /* width: 2em; */
 }
 .eachWine{
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   flex-wrap: wrap;
   margin: .25em;
@@ -26,15 +26,14 @@ h4{
   height: 50%;
 }
 .varietal{
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-block;
   margin:.25em;
   border: .5em solid green;
 }
 
 .rating{
   border: 1em solid blue;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
 }
 
