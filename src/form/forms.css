@@ -12,6 +12,11 @@ h3{
   border-radius: 2em;
   width:.75em;
 }
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
 .varietal{
   display: inline-block;
   margin: .25em;
@@ -65,7 +70,7 @@ label.countryRadio{
   display: block;
   width: 48%;
   height: 8em;
-  margin: .2em;
+  margin: .2em; 
 }
 
 .rating{
