@@ -14,16 +14,16 @@ import './forms.css'
         region: {},
      }
 
-  const [handleChange, handleSubmit] = useForm(formBuilder
+  const [handleChange, handleSubmit] = useForm(objectBuilder
     )
 
 
-  function formBuilder(props){
+  function objectBuilder(props){
 
     console.log(props)
     return true
-
   }
+
   function ratingsInput(){
 
     return(
@@ -43,7 +43,7 @@ import './forms.css'
     return(      
       <>
     <input onChange = {handleChange} className= 'wineName' type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-    <input onChange = {handleChange} className='wineName' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+    <input onChange = {handleChange} className='wineNotes' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
     </>
     )
   }
@@ -129,9 +129,9 @@ import './forms.css'
 
 
     let markup = values.map((item,idx) => 
-    <label key = {idx} className='varietalChoices'>
-      <p>{item.name}</p>
-      <input key = {idx} onChange = {handleChange} type= 'checkbox' name= 'varietals' value={item.value}></input>
+    <label key = {idx}>
+      <input key = {idx} className='varietalChoices' onChange = {handleChange} type= 'checkbox' name= 'varietals' value={item.value}></input>
+      <p className='varietalChoices'>{item.name}</p><br></br>
     </label>
     )
 
@@ -139,13 +139,31 @@ import './forms.css'
       <>
       <label className= 'varietal'>
       <h4>Varietal</h4>
-      <label className='varietalChoices'>
         {markup}
-      </label>
       </label>
       </>
     )
   }
+
+  function formBuilder(){
+    let numberOfWines = ['1','2','3','4'];
+
+    let markup = numberOfWines.map( number =>
+      <label className= 'eachWine'>
+      {nameAndNotesInput()} 
+      {ratingsInput()}
+      {countryOfOrigin()}
+      {varietalsInput()}
+      </label>
+    )
+    return(
+      <>
+            <h4>Wines Tasted</h4>
+            {markup}
+            </>
+    )
+  }
+
 
   return(
     <>
@@ -168,32 +186,9 @@ import './forms.css'
       <input onChange = {handleChange} type= 'text' placeholder = 'Tasting Theme Here!' id = 'theme' name = 'theme' ></input>
 
       {/* Wines Sampled Inputs */}
-      <h4>Wines Tasted</h4>
-
-      <label className= 'eachWine'>
-      {nameAndNotesInput()}
-      {ratingsInput()}
-      {varietalsInput()}
-      
-      </label>
-      <label className= 'eachWine'> 2.
-      {nameAndNotesInput()}
-      {ratingsInput()}
-      {varietalsInput()}
-      </label>
-      <label className= 'eachWine'> 3.
-      {nameAndNotesInput()}
-      {ratingsInput()}
-      {varietalsInput()}
-      </label>
-      <label className= 'eachWine'> 4.
-      {nameAndNotesInput()}
-      {ratingsInput()}
-      {varietalsInput()}
-      </label>
+      {formBuilder()}
 
       {/* Country input */}
-      {countryOfOrigin()}
       <button> Submit Tasting</button>
       </form>
       </>

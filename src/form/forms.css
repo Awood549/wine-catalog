@@ -1,50 +1,66 @@
 button{
   color:orange
 }
-
 h4{
   margin: 0;
   display: block;
 }
-.varietalChoices{
-  display: flex;
-  flex-wrap: wrap;
-  margin:.25em;
-  /* width: 2em; */
+.varietal{
+  display: inline-block;
+  margin: .25em;
+  width: 11em;
+  border: .5em solid green;
 }
+.varietalChoices{
+  margin:.25em;
+}
+
+label.varietalChoices{
+  margin:0px;
+}
+
+p.varietalChoices{
+  display: inline-block;
+  margin: .1em;
+}
+
+p.countryRadio{
+  display: inline-block;
+  margin: .1em;
+}
+
+label.countryRadio{
+  margin:0px;
+}
+
+.countryOrigin{
+  display: inline-block;
+  width: 10em;
+  border: .5em solid yellow;
+}
+
 .eachWine{
   display: inline-block;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin: .25em;
   border: .25em solid red;
   width:480px
 }
 .wineName{
-  text-align: justify;
-  width: 50%;
-  height: 50%;
-}
-.varietal{
+  overflow: hidden;
   display: inline-block;
-  margin:.25em;
-  border: .5em solid green;
+  width: 48%;
+  height: 8em;
+  margin: .2em;
+}
+.wineNotes{
+  overflow: hidden;
+  display: inline-block;
+  width: 48%;
+  height: 8em;
+  margin: .2em;
 }
 
 .rating{
   border: 1em solid blue;
-  display: inline-block;
-  flex-direction: column;
-}
-
-p.countryRadio{
-  display: inline-block;
-  /* border: .5em dotted indianred; */
-  white-space: nowrap;
-}
-
-.countryOrigin{
-  display: inline-block;
-  width: 8em;
-  border: .5em solid yellow;
+float: right;
 }
