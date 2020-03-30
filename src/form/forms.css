@@ -87,10 +87,10 @@ label.countryRadio{
   margin: .2em;
 }
 .wineNotes{
-  overflow: scroll;
+  overflow: hidden;
   display: block;
   word-wrap: normal;
-  width: 48%;
+  /* width: 48%; */
   height: 8em;
   margin: .2em; 
 }

@@ -44,8 +44,8 @@ import './forms.css'
   function nameAndNotesInput(){
     return(      
       <>
-    <input onChange = {handleChange} className= 'wineName' type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-    <input onChange = {handleChange} className='wineNotes' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+    <input onChange = {handleChange} contentEditable='true' className= 'wineName' type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
+    <input onChange = {handleChange} contentEditable='true' className='wineNotes' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
     </>
     )
   }
