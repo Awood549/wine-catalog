@@ -18,18 +18,38 @@ import './forms.css'
     )
 
 
-  function objectBuilder(props){
+  function objectBuilder(formInfo){
+    
+    console.log(formInfo)
 
-    console.log(props)
+    let tasting = {
+    day: 'Mon/Wed',
+    date: '2/21/2020',
+    theme: 'Domestic Reds',
+    wines:[
+      {
+        wine: 'cooper & theif',
+        notes: 'sery very vanilla',
+        crewRating: 2,
+        varietal: 'syrah'
+      }
+    ],
+    varietals: {
+      redBlend: true,
+      cabernet:false,
+    },
+    country: 'domestic'
+  }
+
     return true
   }
 
-  function ratingsInput(){
+  function ratingsInput(iterator){
     let values = ['1','2','3','4','5']
 
     let markup = values.map(value =>
       <> 
-      <p>{value}</p><input key = {value} onChange = {handleChange} type= "radio" name= 'rating' value={value}></input>
+      <p>{value}</p><input key = {value} onChange = {handleChange} type= "radio" name= {`${iterator}rating`} value={value}></input>
       </>
       )
     return(
@@ -41,17 +61,15 @@ import './forms.css'
     </>
     )
   }
-  function nameAndNotesInput(){
+  function nameAndNotesInput(iterator){
     return(      
       <>
-    <input onChange = {handleChange} contentEditable='true' className= 'wineName' type= 'text' name= 'sampledWines' placeholder= 'Wine'></input>
-    <input onChange = {handleChange} contentEditable='true' className='wineNotes' type= 'text' name= 'notes' placeholder= 'Additional Notes'></input>
+    <input onChange = {handleChange} className= 'wineName' type= 'text' name= {`${iterator}wine`} placeholder= 'Wine'></input>
+    <input onChange = {handleChange} className='wineNotes' type= 'text' name= {`${iterator}notes`} placeholder= 'Additional Notes'></input>
     </>
     )
   }
-
-  
-  function countryOfOrigin(){
+  function countryOfOrigin(iterator){
     let values = [
       {
         name:'Domestic',
@@ -93,7 +111,7 @@ import './forms.css'
 
     let markup = values.map((item,idx) =>
       <label key = {idx}> 
-      <input key = {idx} className='countryRadio' onChange = {handleChange}  type= 'radio' name= 'country' value= {item.value}></input><p className='countryRadio'>{item.name}</p><br></br>
+      <input key = {idx} className='countryRadio' onChange = {handleChange}  type= 'radio' name= {`${iterator}country`} value= {item.value}></input><p className='countryRadio'>{item.name}</p><br></br>
       </label>
     )
 
@@ -104,8 +122,7 @@ import './forms.css'
       </label>
     </>
   }
-
-  function varietalsInput(){
+  function varietalsInput(iterator){
     let values = [
       {
         name:'Syrah',
@@ -132,7 +149,7 @@ import './forms.css'
 
     let markup = values.map((item,idx) => 
     <label key = {idx}>
-      <input key = {idx} className='varietalChoices' onChange = {handleChange} type= 'checkbox' name= 'varietals' value={item.value}></input>
+      <input key = {idx} className='varietalChoices' onChange = {handleChange} type= 'checkbox' name= {`${iterator}varitetals`} value={item.value}></input>
       <p className='varietalChoices'>{item.name}</p><br></br>
     </label>
     )
@@ -146,18 +163,17 @@ import './forms.css'
       </>
     )
   }
-
   function formBuilder(){
     let numberOfWines = ['1','2','3','4'];
 
-    let markup = numberOfWines.map( number =>
+    let markup = numberOfWines.map( iterator =>
       <>
       <label className= 'eachWine'>
-      <h3>{number}</h3>
-      {nameAndNotesInput()} 
-      {countryOfOrigin()}
-      {varietalsInput()}
-      {ratingsInput()}
+      <h3>{iterator}</h3>
+      {nameAndNotesInput(iterator)} 
+      {countryOfOrigin(iterator)}
+      {varietalsInput(iterator)}
+      {ratingsInput(iterator)}
       </label>
       </>
     )
@@ -173,8 +189,9 @@ import './forms.css'
   return(
     <>
     <form onSubmit = {handleSubmit}>
-
+      
     {/* Day of the week input */}
+    <legend className= 'baseInfo'>
       <label className = 'dayOf'> 
       <h4>Day of Tasting</h4>
       <input onChange = {handleChange} type = 'radio' id='monday' name='day' value = 'monday' ></input>
@@ -194,6 +211,9 @@ import './forms.css'
       <h4>Tasting Theme</h4>
       <input onChange = {handleChange} type= 'text' placeholder = 'Tasting Theme Here!' id = 'theme' name = 'theme' ></input>
       </label>
+
+      </legend>
+
 
       {/* Wines Sampled Inputs */}
       {formBuilder()}

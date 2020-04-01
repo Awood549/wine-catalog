@@ -31,12 +31,20 @@ input[type=text]:focus {
 }
 .dayOf{
   display: inline-block;
+  /* border: .1em solid rgba(182, 28, 28, 0.842); */
+  margin:.5em;
+
 }
 .dateOf{
   display: inline-block;
+  /* border: .1em solid rgba(182, 28, 28, 0.842); */
+  margin:.5em;
+
 }
 .theme{
   display: inline-block;
+  /* border: .1em solid rgba(182, 28, 28, 0.842); */
+  margin:.5em;
 }
 .varietal{
   display: inline-block;
@@ -99,4 +107,9 @@ label.countryRadio{
   /* border: 1em solid blue; */
   display: inline-block;
   margin-right: .5em
+}
+
+.baseInfo{
+  border: .5em groove rgba(182, 28, 28, 0.842);
+  display: inline-block;
 }
