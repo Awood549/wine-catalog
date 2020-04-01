@@ -20,12 +20,11 @@ import './forms.css'
 
   function objectBuilder(formInfo){
     
-    console.log(formInfo)
-
+    
     let tasting = {
-    day: 'Mon/Wed',
-    date: '2/21/2020',
-    theme: 'Domestic Reds',
+    day: formInfo.day,
+    date: formInfo.date,
+    theme: formInfo.theme,
     wines:[
       {
         wine: 'cooper & theif',
@@ -40,6 +39,7 @@ import './forms.css'
     },
     country: 'domestic'
   }
+  console.log(tasting)
 
     return true
   }
@@ -189,7 +189,7 @@ import './forms.css'
   return(
     <>
     <form onSubmit = {handleSubmit}>
-      
+
     {/* Day of the week input */}
     <legend className= 'baseInfo'>
       <label className = 'dayOf'> 
