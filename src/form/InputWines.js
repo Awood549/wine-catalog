@@ -19,25 +19,37 @@ import './forms.css'
 
 
   function objectBuilder(formInfo){
-    
-    
+
     let tasting = {
     day: formInfo.day,
     date: formInfo.date,
     theme: formInfo.theme,
     wines:[
       {
-        wine: 'cooper & theif',
-        notes: 'sery very vanilla',
-        crewRating: 2,
-        varietal: 'syrah'
-      }
-    ],
-    varietals: {
-      redBlend: true,
-      cabernet:false,
-    },
-    country: 'domestic'
+        wine: formInfo.wine1,
+        notes: formInfo.notes1,
+        crewRating: formInfo.rating1,
+        varietal: formInfo.varietal1
+      },
+      {
+        wine: formInfo.wine2,
+        notes: formInfo.notes2,
+        crewRating: formInfo.rating2,
+        varietal: formInfo.varietal2
+      },
+      {
+        wine: formInfo.wine3,
+        notes: formInfo.notes3,
+        crewRating: formInfo.rating3,
+        varietal: formInfo.varietal3
+      },
+      {
+        wine: formInfo.wine4,
+        notes: formInfo.notes4,
+        crewRating: formInfo.rating4,
+        varietal: formInfo.varietal4
+      },
+    ]
   }
   console.log(tasting)
 
@@ -49,7 +61,7 @@ import './forms.css'
 
     let markup = values.map(value =>
       <> 
-      <p>{value}</p><input key = {value} onChange = {handleChange} type= "radio" name= {`${iterator}rating`} value={value}></input>
+      <p>{value}</p><input key = {value} onChange = {handleChange} type= "radio" name= {`rating${iterator}`} value={value}></input>
       </>
       )
     return(
@@ -64,8 +76,8 @@ import './forms.css'
   function nameAndNotesInput(iterator){
     return(      
       <>
-    <input onChange = {handleChange} className= 'wineName' type= 'text' name= {`${iterator}wine`} placeholder= 'Wine'></input>
-    <input onChange = {handleChange} className='wineNotes' type= 'text' name= {`${iterator}notes`} placeholder= 'Additional Notes'></input>
+    <input onChange = {handleChange} className= 'wineName' type= 'text' name= {`wine${iterator}`} placeholder= 'Wine'></input>
+    <input onChange = {handleChange} className='wineNotes' type= 'text' name= {`notes${iterator}`} placeholder= 'Additional Notes'></input>
     </>
     )
   }
@@ -111,7 +123,7 @@ import './forms.css'
 
     let markup = values.map((item,idx) =>
       <label key = {idx}> 
-      <input key = {idx} className='countryRadio' onChange = {handleChange}  type= 'radio' name= {`${iterator}country`} value= {item.value}></input><p className='countryRadio'>{item.name}</p><br></br>
+      <input key = {idx} className='countryRadio' onChange = {handleChange}  type= 'radio' name= {`country${iterator}`} value= {item.value}></input><p className='countryRadio'>{item.name}</p><br></br>
       </label>
     )
 
@@ -149,7 +161,7 @@ import './forms.css'
 
     let markup = values.map((item,idx) => 
     <label key = {idx}>
-      <input key = {idx} className='varietalChoices' onChange = {handleChange} type= 'checkbox' name= {`${iterator}varitetals`} value={item.value}></input>
+      <input key = {idx} className='varietalChoices' onChange = {handleChange} type= 'checkbox' name= {`varietal${iterator}`} value={item.value}></input>
       <p className='varietalChoices'>{item.name}</p><br></br>
     </label>
     )
