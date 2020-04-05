@@ -10,13 +10,11 @@ import './forms.css'
         date: '',
         theme: '',
         wines: []
-     }
+      }
+      
+      const [handleChange, handleSubmit] = useForm(objectBuilder)
 
-  const [handleChange, handleSubmit] = useForm(objectBuilder
-    )
-
-
-  function objectBuilder(formInfo){
+      function objectBuilder(formInfo){
 
     let tasting = {
     day: formInfo.day,
@@ -53,8 +51,8 @@ import './forms.css'
       },
     ]
   }
-  console.log(tasting)
-  
+  console.log(state)
+  this.setState(tasting)
 
     return true
   }
@@ -203,7 +201,7 @@ import './forms.css'
 
   return(
     <>
-    <form onSubmit = {handleSubmit}>
+    <form onSubmit = {() => handleSubmit}>
 
     {/* Day of the week input */}
     <legend className= 'baseInfo'>
