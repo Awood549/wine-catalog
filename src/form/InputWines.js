@@ -9,9 +9,7 @@ import './forms.css'
         day: '',
         date: '',
         theme: '',
-        wines: [],
-        varietals: {},
-        region: {},
+        wines: []
      }
 
   const [handleChange, handleSubmit] = useForm(objectBuilder
@@ -29,29 +27,34 @@ import './forms.css'
         wine: formInfo.wine1,
         notes: formInfo.notes1,
         crewRating: formInfo.rating1,
+        country: formInfo.country1,
         varietal: formInfo.varietal1
       },
       {
         wine: formInfo.wine2,
         notes: formInfo.notes2,
         crewRating: formInfo.rating2,
+        country: formInfo.country2,
         varietal: formInfo.varietal2
       },
       {
         wine: formInfo.wine3,
         notes: formInfo.notes3,
         crewRating: formInfo.rating3,
+        country: formInfo.country3,
         varietal: formInfo.varietal3
       },
       {
         wine: formInfo.wine4,
         notes: formInfo.notes4,
         crewRating: formInfo.rating4,
+        country: formInfo.country4,
         varietal: formInfo.varietal4
       },
     ]
   }
   console.log(tasting)
+  
 
     return true
   }
@@ -161,7 +164,7 @@ import './forms.css'
 
     let markup = values.map((item,idx) => 
     <label key = {idx}>
-      <input key = {idx} className='varietalChoices' onChange = {handleChange} type= 'checkbox' name= {`varietal${iterator}`} value={item.value}></input>
+      <input key = {idx} className='varietalChoices' onChange = {handleChange} type= 'radio' name= {`varietal${iterator}`} value={item.value}></input>
       <p className='varietalChoices'>{item.name}</p><br></br>
     </label>
     )
