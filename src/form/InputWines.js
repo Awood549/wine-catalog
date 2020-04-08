@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import useForm from './formBlock.js'
 import './forms.css'
   //https://www.youtube.com/watch?v=sfp5K_5GHNg
@@ -12,9 +12,10 @@ import './forms.css'
         wines: []
       }
       
-      const [handleChange, handleSubmit] = useForm(objectBuilder)
+  const [handleChange, handleSubmit] = useForm(objectBuilder);
+  const [newState, setState] = useState(state);
 
-      function objectBuilder(formInfo){
+  function objectBuilder(formInfo){
 
     let tasting = {
     day: formInfo.day,
@@ -51,12 +52,17 @@ import './forms.css'
       },
     ]
   }
-  console.log(state)
-  this.setState(tasting)
-
+  console.log('tasting',tasting)
+  
     return true
   }
 
+  function testerFunc(){
+    console.log(state)
+    return true
+  }
+
+  
   function ratingsInput(iterator){
     let values = ['1','2','3','4','5']
 
@@ -201,7 +207,7 @@ import './forms.css'
 
   return(
     <>
-    <form onSubmit = {() => handleSubmit}>
+    <form onSubmit = {handleSubmit}>
 
     {/* Day of the week input */}
     <legend className= 'baseInfo'>
