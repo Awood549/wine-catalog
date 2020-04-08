@@ -52,9 +52,13 @@ import './forms.css'
       },
     ]
   }
+
   console.log('tasting',tasting)
-  
-    return true
+  setState(tasting)
+  console.log(newState)
+  console.log(state)
+
+    return tasting
   }
 
   function testerFunc(){
@@ -207,7 +211,7 @@ import './forms.css'
 
   return(
     <>
-    <form onSubmit = {handleSubmit}>
+    <form onSubmit = { () => handleSubmit()}>
 
     {/* Day of the week input */}
     <legend className= 'baseInfo'>
